@@ -483,6 +483,8 @@ for i in range(len(sources)):
 edges['1'].create_dataset('nsyns', data=np.full(num_no_d, 1), dtype='uint16')
 
 del_group.create_dataset('delay', data=np.array(delays))
+del_group.create_dataset('sec_x', data=np.full(len(delays), 0.9))
+del_group.create_dataset('sec_id', data=np.full(len(delays), 0))
 edges['edge_group_id'][...] = np.array(group_id)
 edges['edge_group_index'][...] = np.array(group_index)
 f.close()
